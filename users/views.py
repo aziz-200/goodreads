@@ -14,16 +14,16 @@ class RegisterView(View):
         }
         return render(request, 'users/register.html', context)
 
-    def post(self,request):
+    def post(self, request):
         create_form = UserCreateForm(data=request.POST)
         if create_form.is_valid():
             create_form.save()
-            return render('users/login.html' )
+            return render(request, 'users/login.html')
         else:
             context = {
                 "form": create_form
             }
-            return render(request, 'users/login.html', context)
+            return render(request, 'users/register.html', context)
 
 class LoginView(View):
     def get(self,request):

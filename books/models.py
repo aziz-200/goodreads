@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Book(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=5000)
-    isbn = models.IntegerField(max_length=17)
+    isbn = models.IntegerField()
     def __str__(self):
         return self.title
 
