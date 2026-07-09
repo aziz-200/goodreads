@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9339af58-8cca-458e-9d00-5e85e3dacffa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/books/templates/books/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/templates/books/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -52,12 +55,17 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "lesson11/Login",
+    "git-widget-placeholder": "lesson12/BookMethods",
     "last_opened_file_path": "/home/aziz/Desktop/Projects/goodreads",
     "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/books" />
+    </key>
+  </component>
   <component name="RunManager" selected="Django tests.Test: users.tests.RegisterationTest.test_requirment_fields">
     <configuration name="Test: users.tests.RegisterationTest.test_requirment_fields" type="DjangoTestsConfigurationType" temporary="true">
       <module name="goodreads" />
@@ -137,7 +145,7 @@
       <workItem from="1783516257621" duration="12000" />
       <workItem from="1783516866947" duration="3000" />
       <workItem from="1783530376558" duration="4782000" />
-      <workItem from="1783567446911" duration="5286000" />
+      <workItem from="1783567446911" duration="8005000" />
     </task>
     <servers />
   </component>
