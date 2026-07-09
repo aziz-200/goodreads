@@ -71,3 +71,5 @@ class RegisterationTest(TestCase):
         self.assertFormError(form, 'username', 'A user with that username already exists.')
 
 
+
+
