@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from users.models import CustomUser
 from django.test import TestCase
 from django.urls import  reverse
 from django.contrib.auth import get_user
@@ -13,7 +13,7 @@ class RegisterationTest(TestCase):
                              'email': 'test@gmail.com',
                              'password': 'aziz02010815',
                          }, format='json')
-        user = User.objects.get(username='test1')
+        user = CustomUser.objects.get(username='test1')
 
         self.assertEqual(user.first_name, 'test2')
         self.assertEqual(user.last_name, 'test3')
@@ -29,7 +29,7 @@ class RegisterationTest(TestCase):
                              'email': 'test2@gmail.com',
                          })
 
-        self.assertEqual(User.objects.count(), 0)
+        self.assertEqual(CustomUser.objects.count(), 0)
 
         form = response.context['form']
 
@@ -46,13 +46,13 @@ class RegisterationTest(TestCase):
                              'password': 'aziz02010815',
                          }, format='json')
         form = response.context['form']
-        user_account = User.objects.count()
+        user_account = CustomUser.objects.count()
         self.assertEqual(user_account, 0)
         self.assertFormError(form, 'email', 'Enter a valid email address.')
 
     def test_unique_username(self):
 
-        user = User.objects.create_user(username='test1',
+        user = CustomUser.objects.create_user(username='test1',
                                         first_name='test2')
         user.set_password('password')
         user.save()
@@ -67,14 +67,14 @@ class RegisterationTest(TestCase):
                          }, format='json')
         form = response.context['form']
 
-        user_account = User.objects.count()
+        user_account = CustomUser.objects.count()
         self.assertEqual(user_account, 1)
         self.assertFormError(form, 'username', 'A user with that username already exists.')
 
 
 class LoginTest(TestCase):
     def test_successful_login(self):
-        User.objects.create_user(username='test1', password='qw1221', first_name='test1', last_name='test1')
+        CustomUser.objects.create_user(username='test1', password='qw1221', first_name='test1', last_name='test1')
 
         response = self.client.post(
             reverse("users:login"),
@@ -90,7 +90,7 @@ class LoginTest(TestCase):
         self.assertEqual(user.username, 'test1')
 
     def test_wrong_credentials(self):
-        User.objects.create_user(username='test1', password='qw1221', first_name='test1', last_name='test1')
+        CustomUser.objects.create_user(username='test1', password='qw1221', first_name='test1', last_name='test1')
 
         response = self.client.post(
             reverse("users:login"),
@@ -103,7 +103,7 @@ class LoginTest(TestCase):
         user = get_user(self.client)
         self.assertFalse(user.is_authenticated)
 
-        response = self.client.post(
+        response=self.client.post(
             reverse("users:login"),
             data={
                 'username': 'test1',
@@ -122,7 +122,7 @@ class ProfileTestCase(TestCase):
         self.assertEqual(response.url, reverse("users:login") + "?next=/users/profile/")
 
     def test_profile_detail(self):
-        user = User.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
+        user = CustomUser.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
         user.set_password('1234')
         user.save()
         login_success = self.client.login(username='test1', password='1234')
@@ -135,12 +135,12 @@ class ProfileTestCase(TestCase):
         self.assertContains(response, user.last_name)
 
     def test_profile_edit(self):
-        user = User.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
+        user = CustomUser.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
         user.set_password('1234')
         user.save()
         self.client.login(username='test1', password='1234')
         response = self.client.post(reverse("users:profile-edit"), data={
-            'username': 'test1',  # <-- keep it, or change it if testing that too
+            'username': 'test1',
             'first_name': 'test2',
             'last_name': 'test2',
             'email': 'blabla@gmail.com',
