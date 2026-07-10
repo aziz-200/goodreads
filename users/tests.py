@@ -114,3 +114,38 @@ class LoginTest(TestCase):
         user = get_user(self.client)
         self.assertFalse(user.is_authenticated)
 
+class ProfileTestCase(TestCase):
+    def tests_login_required(self):
+        response = self.client.get(reverse("users:profile"))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, reverse("users:login") + "?next=/users/profile/")
+
+    def test_profile_detail(self):
+        user = User.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
+        user.set_password('1234')
+        user.save()
+        login_success = self.client.login(username='test1', password='1234')
+        self.assertTrue(login_success)  # check login worked
+        response = self.client.get(reverse("users:profile"))  # then actually request the page
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, user.username)
+        self.assertContains(response, user.email)
+        self.assertContains(response, user.first_name)
+        self.assertContains(response, user.last_name)
+
+    def test_profile_edit(self):
+        user = User.objects.create(username='test1', first_name='test1', last_name='test1', email='test@gmail.com')
+        user.set_password('1234')
+        user.save()
+        self.client.login(username='test1', password='1234')
+        response = self.client.post(reverse("users:profile-edit"), data={
+            'username': 'test1',  # <-- keep it, or change it if testing that too
+            'first_name': 'test2',
+            'last_name': 'test2',
+            'email': 'blabla@gmail.com',
+        })
+        user.refresh_from_db()
+        self.assertEqual(user.first_name, 'test2')
+        self.assertEqual(user.last_name, 'test2')
+        self.assertEqual(response.url, reverse("users:profile"))
