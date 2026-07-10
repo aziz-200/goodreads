@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book detail page</title>
-</head>
-<body>
-<h1>book </h1>
+{% extends 'base.html' %}
 
-<h3>
-  {{ book.title }}
-</h3>
+{% block title %}{{ book.title }} - Detail{% endblock %}
 
-<p>
-  {{ book.description }}
-</p>
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="mb-4">
+                <span class="text-uppercase text-muted tracking-wider small">Book Detail</span>
+                <h1 class="display-5 fw-bold mt-1 text-dark">{{ book.title }}</h1>
+                <hr class="my-4">
+            </div>
 
-</body>
-</html>
+            <div class="bg-light p-4 rounded shadow-sm">
+                <h5 class="text-secondary mb-3">Description</h5>
+                <p class="lead text-dark" style="white-space: pre-line;">
+                    {{ book.description }}
+                </p>
+            </div>
+            
+            <div class="mt-4">
+                <a href="{% url 'books:list' %}" class="btn btn-outline-secondary">
+                    &larr; Back to Books List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

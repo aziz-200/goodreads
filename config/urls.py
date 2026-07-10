@@ -22,7 +22,7 @@ import users
 from config.views import landing
 
 urlpatterns = [
-    path('', landing),
+    path('', landing, name='landing'),
     path('users/', include("users.urls"), name='users'),
     path('books/', include("books.urls")),
     path("admin/", admin.site.urls),

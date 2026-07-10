@@ -1,18 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register page</title>
-</head>
-<body>
-    <h1>register page</h1>
+{% extends 'base.html' %}
 
-<form method="post" action="{% url 'users:register' %}">
-    {% csrf_token %}
+{% block title %}Register page{% endblock %}
 
-    {{ form.as_p }}
-
-    <button type="submit">Submit</button>
-</form>
-</body>
-</html>
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Register Page</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'users:register' %}">
+                        {% csrf_token %}
+                        
+                        {{ form.as_p }}
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="{% url 'users:login' %}" class="btn btn-outline-secondary">Already have an account? Log in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
