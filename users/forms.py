@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from users.models import CustomUser
 
 
 # class UserCreateForm(forms.Form):
@@ -30,7 +30,7 @@ from django.contrib.auth.models import User
 
 class UserCreateForm(forms.ModelForm):
     class Meta: # tepadagidagidan ko'ra ixchamroq yechim
-        model = User
+        model = CustomUser
         fields = ('username', 'first_name', 'last_name', 'email', 'password')
 
     def save(self, commit=True):
@@ -48,5 +48,5 @@ class UserLoginForm(forms.Form):
 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('username' ,'first_name', 'last_name', 'email')
+        model = CustomUser
+        fields = ['username', 'first_name', 'last_name', 'email', 'profile_pic']

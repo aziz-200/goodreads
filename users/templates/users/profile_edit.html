@@ -11,16 +11,14 @@
                     <h4 class="mb-0">Edit Profile Page</h4>
                 </div>
                 <div class="card-body">
-                    <form method="post">
-                        {% csrf_token %}
-
-                        {{ form.as_p }}
-
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                            <a href="{% url 'users:profile' %}" class="btn btn-outline-secondary">Cancel</a>
-                        </div>
-                    </form>
+                    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="d-grid gap-2 mt-4">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        <a href="{% url 'users:profile' %}" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+</form>
                 </div>
             </div>
         </div>

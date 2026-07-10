@@ -6,18 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="9339af58-8cca-458e-9d00-5e85e3dacffa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/templates/users/profile_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,16 +30,84 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="45" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000008724041693" />
+      <entry key="S5" value="1.0037712020178613" />
+      <entry key="S10" value="1.0642885830651383" />
+      <entry key="S30" value="1.8112458399318432" />
+      <entry key="S60" value="3.1052882716939094" />
+      <entry key="M2" value="5.01626771030364" />
+      <entry key="M5" value="9.031735217601705" />
+      <entry key="M10" value="15.131395758552308" />
+      <entry key="M15" value="23.506356786501883" />
+      <entry key="M30" value="60.65829933176417" />
+      <entry key="H1" value="127.6289680547085" />
+      <entry key="H2" value="196.2625007348146" />
+      <entry key="H4" value="246.23892755954043" />
+      <entry key="D1" value="299.0024179459088" />
+      <entry key="W1" value="309.2539359984044" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.7053512735287815E-305" />
+      <entry key="S2" value="6.4262169426981845E-77" />
+      <entry key="S5" value="3.3704642708425246E-31" />
+      <entry key="S10" value="6.826934123690094E-16" />
+      <entry key="S30" value="2.515579082668393E-5" />
+      <entry key="S60" value="0.014874757180327271" />
+      <entry key="M2" value="0.38011010012537055" />
+      <entry key="M5" value="2.6994298897855216" />
+      <entry key="M10" value="5.27684044129457" />
+      <entry key="M15" value="6.773209778683718" />
+      <entry key="M30" value="9.532839661497357" />
+      <entry key="H1" value="12.54792476478361" />
+      <entry key="H2" value="15.117699401888812" />
+      <entry key="H4" value="16.852509584403588" />
+      <entry key="D1" value="18.60889975746451" />
+      <entry key="W1" value="18.943249135536924" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.07588718027469044" />
+      <entry key="MS500" value="0.5970815935372947" />
+      <entry key="S2" value="0.8790403562104054" />
+      <entry key="S5" value="0.953371249647951" />
+      <entry key="S10" value="1.0377066065331455" />
+      <entry key="S30" value="1.8002530788643933" />
+      <entry key="S60" value="3.11364177048024" />
+      <entry key="M2" value="5.3898928031422555" />
+      <entry key="M5" value="11.721012929389218" />
+      <entry key="M10" value="20.398567241830413" />
+      <entry key="M15" value="30.270887141487112" />
+      <entry key="M30" value="70.1841554539118" />
+      <entry key="H1" value="140.17176129029338" />
+      <entry key="H2" value="211.37691664300053" />
+      <entry key="H4" value="263.08955204441554" />
+      <entry key="D1" value="317.6109624456956" />
+      <entry key="W1" value="328.19713326633416" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -54,6 +124,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Django tests.Test: users.tests.RegisterationTest.test_requirment_fields.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -61,9 +132,19 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "lesson13/Profile",
+    "junie.onboarding.icon.badge.shown": "true",
+    "junie.plugin.stays.banner.dismissed": "true",
     "last_opened_file_path": "/home/aziz/Desktop/Projects/goodreads",
-    "settings.editor.selected.configurable": "terminal",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion.inline",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -152,6 +233,7 @@
       <workItem from="1783516866947" duration="3000" />
       <workItem from="1783530376558" duration="4782000" />
       <workItem from="1783567446911" duration="8005000" />
+      <workItem from="1783666560379" duration="6852000" />
     </task>
     <servers />
   </component>
@@ -165,6 +247,10 @@
           <url>file://$PROJECT_DIR$/users/tests.py</url>
           <line>25</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/users/forms.py</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
