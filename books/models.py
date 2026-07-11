@@ -1,6 +1,8 @@
 import code
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from django.utils import timezone
+
 from users.models import CustomUser
 
 
@@ -8,6 +10,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=5000)
     isbn = models.IntegerField()
+    cover_picture = models.ImageField(upload_to='cover_pic', blank=True, default='cover_default_pic.jpg')
     def __str__(self):
         return self.title
 
@@ -34,6 +37,6 @@ class BookReview(models.Model):
     stars_given = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
-
+    created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return f'{self.stars_given} by {self.user.first_name}'

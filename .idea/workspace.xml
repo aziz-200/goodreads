@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9339af58-8cca-458e-9d00-5e85e3dacffa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/templates/books/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/profile_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +28,15 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="45" />
+    <option name="cachedIndexableFilesCount" value="66" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,61 +49,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000008724041693" />
-      <entry key="S5" value="1.0037712020178613" />
-      <entry key="S10" value="1.0642885830651383" />
-      <entry key="S30" value="1.8112458399318432" />
-      <entry key="S60" value="3.1052882716939094" />
-      <entry key="M2" value="5.01626771030364" />
-      <entry key="M5" value="9.031735217601705" />
-      <entry key="M10" value="15.131395758552308" />
-      <entry key="M15" value="23.506356786501883" />
-      <entry key="M30" value="60.65829933176417" />
-      <entry key="H1" value="127.6289680547085" />
-      <entry key="H2" value="196.2625007348146" />
-      <entry key="H4" value="246.23892755954043" />
-      <entry key="D1" value="299.0024179459088" />
-      <entry key="W1" value="309.2539359984044" />
+      <entry key="MS100" value="2.218611553721458" />
+      <entry key="MS500" value="4.024877998226359" />
+      <entry key="S2" value="4.722426378527487" />
+      <entry key="S5" value="4.886968631959383" />
+      <entry key="S10" value="5.127206551620202" />
+      <entry key="S30" value="11.556839995972169" />
+      <entry key="S60" value="22.950589531141592" />
+      <entry key="M2" value="37.6263661250642" />
+      <entry key="M5" value="57.691883208095504" />
+      <entry key="M10" value="74.51140229064222" />
+      <entry key="M15" value="85.00042821765754" />
+      <entry key="M30" value="106.62516154860472" />
+      <entry key="H1" value="164.83930866843482" />
+      <entry key="H2" value="336.3114413102544" />
+      <entry key="H4" value="612.3461774387941" />
+      <entry key="D1" value="1146.3851302796172" />
+      <entry key="W1" value="1290.0054798649105" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.7053512735287815E-305" />
-      <entry key="S2" value="6.4262169426981845E-77" />
-      <entry key="S5" value="3.3704642708425246E-31" />
-      <entry key="S10" value="6.826934123690094E-16" />
-      <entry key="S30" value="2.515579082668393E-5" />
-      <entry key="S60" value="0.014874757180327271" />
-      <entry key="M2" value="0.38011010012537055" />
-      <entry key="M5" value="2.6994298897855216" />
-      <entry key="M10" value="5.27684044129457" />
-      <entry key="M15" value="6.773209778683718" />
-      <entry key="M30" value="9.532839661497357" />
-      <entry key="H1" value="12.54792476478361" />
-      <entry key="H2" value="15.117699401888812" />
-      <entry key="H4" value="16.852509584403588" />
-      <entry key="D1" value="18.60889975746451" />
-      <entry key="W1" value="18.943249135536924" />
+      <entry key="MS100" value="1.427858706999159E-308" />
+      <entry key="MS500" value="2.6988676250469668E-62" />
+      <entry key="S2" value="4.676921375200426E-16" />
+      <entry key="S5" value="1.0265094671374378E-6" />
+      <entry key="S10" value="0.0014089550978064397" />
+      <entry key="S30" value="0.17727393244618453" />
+      <entry key="S60" value="0.5951646742532433" />
+      <entry key="M2" value="1.0994993331975145" />
+      <entry key="M5" value="1.9987912972925395" />
+      <entry key="M10" value="3.3733260151312052" />
+      <entry key="M15" value="4.35300083234373" />
+      <entry key="M30" value="6.307827418469467" />
+      <entry key="H1" value="10.559502488189198" />
+      <entry key="H2" value="20.46670214315933" />
+      <entry key="H4" value="34.631213982324006" />
+      <entry key="D1" value="60.15601768104105" />
+      <entry key="W1" value="66.80374722285403" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.07588718027469044" />
-      <entry key="MS500" value="0.5970815935372947" />
-      <entry key="S2" value="0.8790403562104054" />
-      <entry key="S5" value="0.953371249647951" />
-      <entry key="S10" value="1.0377066065331455" />
-      <entry key="S30" value="1.8002530788643933" />
-      <entry key="S60" value="3.11364177048024" />
-      <entry key="M2" value="5.3898928031422555" />
-      <entry key="M5" value="11.721012929389218" />
-      <entry key="M10" value="20.398567241830413" />
-      <entry key="M15" value="30.270887141487112" />
-      <entry key="M30" value="70.1841554539118" />
-      <entry key="H1" value="140.17176129029338" />
-      <entry key="H2" value="211.37691664300053" />
-      <entry key="H4" value="263.08955204441554" />
-      <entry key="D1" value="317.6109624456956" />
-      <entry key="W1" value="328.19713326633416" />
+      <entry key="MS100" value="2.1763510434693796" />
+      <entry key="MS500" value="4.009550164620515" />
+      <entry key="S2" value="4.717869896848073" />
+      <entry key="S5" value="4.88507565516532" />
+      <entry key="S10" value="5.127123075747183" />
+      <entry key="S30" value="11.716412435428554" />
+      <entry key="S60" value="23.511896681663377" />
+      <entry key="M2" value="38.686490843483575" />
+      <entry key="M5" value="59.658306566124025" />
+      <entry key="M10" value="77.85994731609712" />
+      <entry key="M15" value="89.33341084999333" />
+      <entry key="M30" value="112.91985427368708" />
+      <entry key="H1" value="175.38885037651625" />
+      <entry key="H2" value="356.76923897487706" />
+      <entry key="H4" value="646.9702831861855" />
+      <entry key="D1" value="1206.5392086987085" />
+      <entry key="W1" value="1356.8089228032095" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -118,42 +115,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django tests.Test: users.tests.RegisterationTest.test_requirment_fields.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "lesson13/Profile",
-    "junie.onboarding.icon.badge.shown": "true",
-    "junie.plugin.stays.banner.dismissed": "true",
-    "last_opened_file_path": "/home/aziz/Desktop/Projects/goodreads",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion.inline",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.goodreads.executor&quot;: &quot;Debug&quot;,
+    &quot;Django tests.Test: users.tests.RegisterationTest.test_requirment_fields.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lesson13/Profile&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aziz/Desktop/Projects/goodreads&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/books" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: users.tests.RegisterationTest.test_requirment_fields">
+  <component name="RunManager" selected="Django Server.goodreads">
     <configuration name="Test: users.tests.RegisterationTest.test_requirment_fields" type="DjangoTestsConfigurationType" temporary="true">
       <module name="goodreads" />
       <option name="ENV_FILES" value="" />
@@ -233,7 +231,11 @@
       <workItem from="1783516866947" duration="3000" />
       <workItem from="1783530376558" duration="4782000" />
       <workItem from="1783567446911" duration="8005000" />
-      <workItem from="1783666560379" duration="6852000" />
+      <workItem from="1783666560379" duration="7055000" />
+      <workItem from="1783696809919" duration="87000" />
+      <workItem from="1783699919307" duration="6932000" />
+      <workItem from="1783745011640" duration="5000" />
+      <workItem from="1783745537118" duration="10475000" />
     </task>
     <servers />
   </component>
@@ -251,6 +253,20 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/users/forms.py</url>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/books/views.py</url>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/books/views.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/books/tests.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
