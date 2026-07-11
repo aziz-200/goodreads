@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import send_mail
+
 from users.models import CustomUser
 
 
@@ -37,6 +39,14 @@ class UserCreateForm(forms.ModelForm):
         user = super().save(commit)
         user.set_password(self.cleaned_data['password'])
         user.save()
+        # EMAIL SENDING SECTION
+        # if user.email:
+        #     send_mail(
+        #         'Welcome to GoodReads',
+        #         f"Hi, {user.username}! Welcome to GoodReads.",
+        #         'azizaxtamov0201@gmail.com',
+        #         [user.email]
+        #     )
         return user
 
 

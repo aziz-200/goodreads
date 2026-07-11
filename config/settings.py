@@ -134,3 +134,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_files')
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# email configuraion
+
+EMAIL_FROM = 'azizaxtamov0201@gmail.com'
+EMAIL_HOST_PASSWORD = 'pzam rvhv ufge uxpr'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'azizaxtamov0201@gmail.com'
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_PASSWORD_RESET_TIMEOUT = 14400
