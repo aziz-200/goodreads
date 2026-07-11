@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9339af58-8cca-458e-9d00-5e85e3dacffa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,61 +41,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0007932152308447" />
-      <entry key="MS500" value="1.2418592563698134" />
-      <entry key="S2" value="2.0087292660306835" />
-      <entry key="S5" value="2.798957916349389" />
-      <entry key="S10" value="3.2925456681083944" />
-      <entry key="S30" value="3.735092562383604" />
-      <entry key="S60" value="4.080542717365194" />
-      <entry key="M2" value="9.774791393303035" />
-      <entry key="M5" value="50.261334167339854" />
-      <entry key="M10" value="102.02193790659108" />
-      <entry key="M15" value="133.00952497325704" />
-      <entry key="M30" value="182.42710414574248" />
-      <entry key="H1" value="255.3793231011187" />
-      <entry key="H2" value="431.66037706705805" />
-      <entry key="H4" value="712.1766566630716" />
-      <entry key="D1" value="1261.1502631461087" />
-      <entry key="W1" value="1410.0103604667124" />
+      <entry key="MS100" value="1.9866263044091785" />
+      <entry key="MS500" value="3.899921204690059" />
+      <entry key="S2" value="4.684218873050662" />
+      <entry key="S5" value="4.870008738489764" />
+      <entry key="S10" value="4.934374139306419" />
+      <entry key="S30" value="4.978566377569663" />
+      <entry key="S60" value="5.013561318116719" />
+      <entry key="M2" value="5.232639353955269" />
+      <entry key="M5" value="9.250087643205319" />
+      <entry key="M10" value="33.656717818157716" />
+      <entry key="M15" value="71.00191907069687" />
+      <entry key="M30" value="176.32930025015887" />
+      <entry key="H1" value="316.9184551110455" />
+      <entry key="H2" value="534.4107381047498" />
+      <entry key="H4" value="848.5649733595285" />
+      <entry key="D1" value="1478.3408139368003" />
+      <entry key="W1" value="1653.9535656255441" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="7.549076126656643E-110" />
-      <entry key="S5" value="3.12274450964252E-44" />
-      <entry key="S10" value="2.4574455276515525E-22" />
-      <entry key="S30" value="9.904680277639603E-8" />
-      <entry key="S60" value="4.4487186149263244E-4" />
-      <entry key="M2" value="0.030060338443412812" />
-      <entry key="M5" value="0.47368213778578705" />
-      <entry key="M10" value="1.642169927323562" />
-      <entry key="M15" value="2.6937788345908644" />
-      <entry key="M30" value="4.962110092860656" />
-      <entry key="H1" value="9.36562475748995" />
-      <entry key="H2" value="19.275005803204927" />
-      <entry key="H4" value="33.60787397233367" />
-      <entry key="D1" value="59.85603787519917" />
-      <entry key="W1" value="66.75605519825885" />
+      <entry key="S2" value="4.135956191875646E-136" />
+      <entry key="S5" value="7.024741897103024E-55" />
+      <entry key="S10" value="8.381416867783698E-28" />
+      <entry key="S30" value="9.772139983719926E-10" />
+      <entry key="S60" value="4.5877405449125006E-5" />
+      <entry key="M2" value="0.016363608462719413" />
+      <entry key="M5" value="0.7033983462810866" />
+      <entry key="M10" value="2.6516887752918032" />
+      <entry key="M15" value="4.348264308025341" />
+      <entry key="M30" value="8.032098404333219" />
+      <entry key="H1" value="13.44281317310839" />
+      <entry key="H2" value="23.682889441730662" />
+      <entry key="H4" value="38.86192919941794" />
+      <entry key="D1" value="68.44836221304132" />
+      <entry key="W1" value="76.53131193523579" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.698024282579381E-4" />
-      <entry key="MS500" value="0.3152105733636405" />
-      <entry key="S2" value="1.3935081350611727" />
-      <entry key="S5" value="2.3881558999521055" />
-      <entry key="S10" value="3.0340156518305723" />
-      <entry key="S30" value="3.6328076103718243" />
-      <entry key="S60" value="4.027452551186261" />
-      <entry key="M2" value="9.77630000172837" />
-      <entry key="M5" value="50.715958681358345" />
-      <entry key="M10" value="103.64619690997768" />
-      <entry key="M15" value="135.6869690330111" />
-      <entry key="M30" value="187.37687884294547" />
-      <entry key="H1" value="264.73510332834405" />
-      <entry key="H2" value="450.92648961084984" />
-      <entry key="H4" value="745.777378226257" />
-      <entry key="D1" value="1321.0043289756188" />
-      <entry key="W1" value="1476.7661055306714" />
+      <entry key="MS100" value="1.9445585330902" />
+      <entry key="MS500" value="3.882040628912903" />
+      <entry key="S2" value="4.678738220113531" />
+      <entry key="S5" value="4.867719835579282" />
+      <entry key="S10" value="4.93321291187804" />
+      <entry key="S30" value="4.978175281453585" />
+      <entry key="S60" value="5.013404204413272" />
+      <entry key="M2" value="5.248614568451526" />
+      <entry key="M5" value="9.949395220377825" />
+      <entry key="M10" value="36.29973216150924" />
+      <entry key="M15" value="75.33950306171657" />
+      <entry key="M30" value="184.34971413976487" />
+      <entry key="H1" value="330.35058208009696" />
+      <entry key="H2" value="558.0839853680346" />
+      <entry key="H4" value="887.4191226318637" />
+      <entry key="D1" value="1546.7869786224815" />
+      <entry key="W1" value="1730.4845296216622" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -105,37 +107,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.goodreads.executor&quot;: &quot;Debug&quot;,
-    &quot;Django tests.Test: users.tests.RegisterationTest.test_requirment_fields.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson13/Profile&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aziz/Desktop/Projects/goodreads&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.goodreads.executor": "Debug",
+    "Django tests.Test: users.tests.RegisterationTest.test_requirment_fields.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "lesson/SendEmail__with__django__signals",
+    "junie.onboarding.icon.badge.shown": "true",
+    "junie.plugin.stays.banner.dismissed": "true",
+    "last_opened_file_path": "/home/aziz/Desktop/Projects/goodreads",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion.inline",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/books" />
@@ -226,7 +228,7 @@
       <workItem from="1783699919307" duration="6932000" />
       <workItem from="1783745011640" duration="5000" />
       <workItem from="1783745537118" duration="10884000" />
-      <workItem from="1783763822507" duration="1151000" />
+      <workItem from="1783763822507" duration="3674000" />
     </task>
     <servers />
   </component>
