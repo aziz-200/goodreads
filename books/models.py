@@ -27,6 +27,10 @@ class BookAuthor(models.Model): # many to many relationship uchun tableni yarati
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
+    @property
+    def full_name(self):
+        return f"{self.author.first_name} {self.author.last_name}"
+
     def __str__(self):
         return f'{self.book.title} {self.author.first_name} {self.author.last_name}'
 
