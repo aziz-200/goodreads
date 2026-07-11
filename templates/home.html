@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}Home Feed{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <!-- Feed Title Header -->
+    <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+        <h1 class="h4 fw-bold text-dark mb-0">Home page</h1>
+        <span class="badge bg-secondary rounded-pill">Page {{ page_obj.number }}</span>
+    </div>
+
+    <!-- 2-Column Review Cards Grid System -->
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for book_review in page_obj %}
+            <div class="col">
+                <div class="card h-100 shadow-sm border border-light-subtle rounded-3">
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+
+                        <div>
+                            <!-- 1. Header: Author Image + Inline text summary with REAL STARS -->
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                {% if book_review.user.profile_picture %}
+                                    <img src="{{ book_review.user.profile_picture.url }}"
+                                         alt="Profile picture"
+                                         class="rounded-circle object-cover"
+                                         style="width: 40px; height: 40px; object-fit: cover;">
+                                {% else %}
+                                    <div class="bg-secondary bg-opacity-10 text-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-person-fill fs-5"></i>
+                                    </div>
+                                {% endif %}
+
+                                <div>
+                                    <p class="mb-0 text-dark">
+                                        <span class="fw-bold">{{ book_review.user.username }}</span>
+                                        <span class="text-secondary">rated this book</span>
+                                    </p>
+
+                                    <!-- Real Dynamic Star Icons Render -->
+                                    <div class="text-warning my-1 small">
+                                        {% for i in "12345" %}
+                                            {% if forloop.counter <= book_review.stars_given %}
+                                                <i class="bi bi-star-fill"></i>
+                                            {% else %}
+                                                <i class="bi bi-star text-muted text-opacity-25"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+
+                                    <small class="text-muted text-opacity-75 d-block">{{ book_review.created_at|date:"M d, Y" }}</small>
+                                </div>
+                            </div>
+
+                            <!-- 2. Review text segment truncated cleanly (5 to 7 lines safe zone) -->
+                            <div class="review-text text-secondary mb-4 lh-base">
+                                {{ book_review.comment|truncatewords:40 }}
+                            </div>
+                        </div>
+
+                        <!-- 3. Centered Book Cover Image (Pushed perfectly to bottom) -->
+                        <div class="text-center d-flex justify-content-center align-items-center mt-auto">
+                            {% if book_review.book.cover_picture %}
+                                <img src="{{ book_review.book.cover_picture.url }}"
+                                     alt="{{ book_review.book.title }} Cover"
+                                     class="img-fluid rounded shadow-sm border"
+                                     style="max-width: 150px; height: 200px; object-fit: contain;">
+                            {% else %}
+                                <div class="bg-light text-muted d-flex flex-column align-items-center justify-content-center p-3 border rounded" style="width: 140px; height: 190px;">
+                                    <i class="bi bi-book fs-2 mb-2 opacity-50"></i>
+                                    <span class="small fw-semibold text-center text-truncate w-100">{{ book_review.book.title }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12 text-center py-5 bg-white rounded-3 border border-light-subtle">
+                <i class="bi bi-journal-x text-muted display-4 mb-3 opacity-50"></i>
+                <h5 class="fw-bold text-dark">Your feed is quiet</h5>
+                <p class="text-secondary small">No updates available at the moment.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination Navigation Control System Element -->
+    {% if page_obj.has_other_pages %}
+        <nav aria-label="Page navigation" class="mt-5 mb-5">
+            <ul class="pagination justify-content-center shadow-sm">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Prev</a>
+                    </li>
+                {% endif %}
+                <li class="page-item active"><span class="page-link px-3">{{ page_obj.number }}</span></li>
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+</div>
+{% endblock %}

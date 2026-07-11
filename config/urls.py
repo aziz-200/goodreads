@@ -20,11 +20,12 @@ from django.urls import path, include
 
 import users
 from config import settings
-from config.views import landing
+from config.views import landing, home
 from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('home/', home, name='home'),
     path('', landing, name='landing'),
     path('users/', include("users.urls"), name='users'),
     path('books/', include("books.urls")),

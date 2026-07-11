@@ -1,52 +1,226 @@
 {% extends 'base.html' %}
 
-{% block title %}Books List{% endblock %}
+{% block title %}Books List | Online Bookstore{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="mb-0 fw-bold text-dark">Books</h1>
-        <span class="badge bg-secondary fs-6">{{ books|length }} Books Available</span>
+    <!-- Header & Search Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5 pb-4 border-bottom gap-4">
+        <div>
+            <h1 class="mb-1 fw-bold text-dark">Explore Our Collection</h1>
+            <p class="text-muted mb-0">Discover your next great read</p>
+        </div>
+
+        <!-- Search Form Component -->
+        <div class="search-wrapper w-100 max-w-md">
+            <form method="GET" action="{% url 'books:list' %}" class="input-group shadow-sm rounded-pill overflow-hidden border">
+                <span class="input-group-text bg-white border-0 ps-3 text-muted">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text"
+                       name="search"
+                       class="form-control border-0 bg-white py-2 shadow-none ps-2"
+                       placeholder="Search by title, description, or ISBN..."
+                       value="{{ request.GET.search|default:'' }}">
+                {% if request.GET.search %}
+                    <a href="{% url 'books:list' %}" class="btn btn-white border-0 text-muted d-flex align-items-center px-2" title="Clear Search">
+                        <i class="bi bi-x-circle-fill"></i>
+                    </a>
+                {% endif %}
+                <button class="btn btn-dark px-4" type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Total Count Badge -->
+        <span class="badge bg-dark px-3 py-2 fs-6 rounded-pill shadow-sm shrink-0">
+            {{ page_obj.paginator.count }} Books Total
+        </span>
     </div>
 
+    <!-- Active Filter Feedback -->
+    {% if request.GET.search %}
+        <div class="alert alert-light border d-flex align-items-center justify-content-between rounded-3 py-2 px-3 mb-4 shadow-sm">
+            <div class="text-secondary small">
+                <i class="bi bi-funnel-fill me-1 text-dark"></i> Showing results for:
+                <strong class="text-dark">"{{ request.GET.search }}"</strong>
+            </div>
+            <a href="{% url 'books:list' %}" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 bg-white fs-xs">
+                Clear Filters
+            </a>
+        </div>
+    {% endif %}
+
     {% if books %}
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Bookstore Card Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             {% for book in books %}
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-0 bg-light">
-                        <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="card h-100 shadow-sm border-0 book-card bg-white transition">
+
+                        <!-- Book Cover Image Wrapper -->
+                        <div class="book-cover-wrapper bg-light position-relative overflow-hidden rounded-top">
+                            {% if book.cover_picture %}
+                                <img src="{{ book.cover_picture.url }}" alt="{{ book.title }} Cover" class="book-cover-img">
+                            {% else %}
+                                <div class="d-flex flex-column align-items-center justify-content-center h-100 text-muted p-3 text-center bg-secondary bg-opacity-10">
+                                    <i class="bi bi-book fs-1 mb-2"></i>
+                                    <span class="small fw-semibold text-uppercase tracking-wider">No Cover</span>
+                                </div>
+                            {% endif %}
+
+                            <div class="cover-overlay d-flex align-items-center justify-content-center">
+                                <a href="{% url 'books:detail' book.id %}" class="btn btn-light btn-sm rounded-pill shadow-sm px-3">
+                                    Quick View
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body d-flex flex-column justify-content-between p-3">
                             <div>
-                                <h5 class="card-title fw-bold text-truncate mb-2">
+                                <h6 class="card-title fw-bold text-dark mb-1 text-truncate" title="{{ book.title }}">
                                     {{ book.title }}
-                                </h5>
-                                <p class="card-text text-muted text-truncate-3 small">
-                                    {{ book.description|default:"No description available." }}
+                                </h6>
+                                <p class="text-muted small mb-2">ISBN: {{ book.isbn }}</p>
+                                <p class="card-text text-secondary text-truncate-3 small mb-0">
+                                    {{ book.description|default:"No description available for this edition." }}
                                 </p>
                             </div>
-                            <div class="mt-3 pt-3 border-top">
-                                <a href="{% url 'books:detail' book.id %}" class="btn btn-sm btn-primary w-100">
+
+                            <div class="mt-3 pt-3 border-top-dashed">
+                                <a href="{% url 'books:detail' book.id %}" class="btn btn-sm btn-dark w-100 rounded-pill py-2 font-weight-semibold">
                                     View Details
                                 </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             {% endfor %}
         </div>
+
+        <!-- ================= PAGINATION CONTROLS ================= -->
+        {% if page_obj.has_other_pages %}
+            <nav aria-label="Book library page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+
+                    <!-- Previous Page Link -->
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link text-dark shadow-none" href="?page={{ page_obj.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" aria-label="Previous">
+                                <span aria-hidden="true">&larr; Prev</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link text-muted">&larr; Prev</span>
+                        </li>
+                    {% endif %}
+
+                    <!-- Numeric Page Links -->
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link bg-dark border-dark text-white shadow-none">{{ num }}</span>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link text-dark shadow-none" href="?page={{ num }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- Next Page Link -->
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link text-dark shadow-none" href="?page={{ page_obj.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" aria-label="Next">
+                                <span aria-hidden="true">Next &rarr;</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link text-muted">Next &rarr;</span>
+                        </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        {% endif %}
+        <!-- ========================================================== -->
+
     {% else %}
-        <div class="alert alert-warning text-center border-0 shadow-sm" role="alert">
-            <h4 class="alert-heading fw-bold mb-2">No books found!</h4>
-            <p class="mb-0 text-muted">Check back later or try adding some books to the library system.</p>
+        <!-- Empty State View -->
+        <div class="text-center py-5 my-5">
+            <div class="mb-3 text-muted display-1"><i class="bi bi-book-half"></i></div>
+            <h3 class="fw-bold text-dark mb-2">Our shelves are currently empty</h3>
+            {% if request.GET.search %}
+                <p class="text-muted max-w-md mx-auto mb-4">We couldn't find any items matching your search criteria. Try using different keywords.</p>
+                <a href="{% url 'books:list' %}" class="btn btn-outline-dark rounded-pill px-4">View All Books</a>
+            {% else %}
+                <p class="text-muted max-w-md mx-auto mb-4">We're updating our collection. Please check back shortly or explore other sections.</p>
+                <a href="/" class="btn btn-outline-dark rounded-pill px-4">Go to Homepage</a>
+            {% endif %}
         </div>
     {% endif %}
 </div>
 
+<!-- Custom CSS for Bookstore Presentation -->
 <style>
+    .max-w-md { max-width: 450px; }
+    .fs-xs { font-size: 0.75rem; }
+    .shrink-0 { flex-shrink: 0; }
+    .btn-white { background-color: #fff; }
+    .btn-white:hover { background-color: #f8f9fa; }
+
+    .book-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    }
+    .book-cover-wrapper {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+    }
+    .book-cover-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .cover-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+    .book-card:hover .cover-overlay {
+        opacity: 1;
+    }
     .text-truncate-3 {
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;  
+        -webkit-box-orient: vertical;
         overflow: hidden;
+        line-height: 1.5;
+    }
+    .border-top-dashed {
+        border-top: 1px dashed #e3e6f0;
+    }
+
+    /* Sleek styles override for premium pagination */
+    .pagination .page-link {
+        border-radius: 6px;
+        margin: 0 3px;
+        border: 1px solid #dee2e6;
+    }
+    .pagination .page-link:hover {
+        background-color: #f8f9fa;
+        border-color: #dee2e6;
     }
 </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 {% endblock %}
