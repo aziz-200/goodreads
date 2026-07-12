@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local apps
     'books',
     'users',
+    'api',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
