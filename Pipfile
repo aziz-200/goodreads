@@ -12,6 +12,7 @@ celery-types = "*"
 kombu = "*"
 djangorestframework = "*"
 djangorestframework-stubs = "*"
+django-environ = "*"
 
 [dev-packages]
 
