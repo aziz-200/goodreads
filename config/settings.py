@@ -12,23 +12,28 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
-
-from django.conf.global_settings import MEDIA_ROOT
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+# Reading .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+6$2ba0qy!s*fm7yy$e0*!io&v30!^=f(0awxv+2#ew45(+my_"
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 LOGIN_URL = 'users:login'
 LogOUT_URL = 'users:logout'
 
@@ -89,14 +94,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'goodreads_db',
-        "USER": 'aziz',
-        "PASSWORD": '0201',
-        "HOST": 'localhost',
-        "PORT": '5432',
-    }
+    "default": env.db(),
 }
 
 
@@ -139,19 +137,19 @@ STATIC_URL = "static/"
 
 # email configuraion
 
-EMAIL_FROM = 'azizaxtamov0201@gmail.com'
-EMAIL_HOST_PASSWORD = 'pzam rvhv ufge uxpr'
+EMAIL_FROM = env('EMAIL_FROM')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'azizaxtamov0201@gmail.com'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
 EMAIL_PASSWORD_RESET_TIMEOUT = 14400
 
 
-CELERY_BROKER_URL = "amqp://aziz:0201@localhost:9090//"
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"

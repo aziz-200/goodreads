@@ -7,12 +7,12 @@ from books.models import BookReview, Book
 from .serializers import BookReviewSerializer
 from rest_framework import viewsets
 
-class BookReviewViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    queryset = BookReview.objects.all()
-    serializer_class = BookReviewSerializer
-    lookup_field = 'id'
-    
+# class BookReviewViewSet(viewsets.ModelViewSet):
+#     permission_classes = [IsAuthenticated]
+#     queryset = BookReview.objects.all()
+#     serializer_class = BookReviewSerializer
+#     lookup_field = 'id'
+#
 
 
 
