@@ -1,11 +1,10 @@
+import code
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core import paginator
+from django.contrib import messages
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
-from django.views.generic import ListView, DetailView
-
 from .forms import BookReviewForm
 from .models import Book, BookReview
 from django.db.models import Q
@@ -73,3 +72,37 @@ class AddReviewView(LoginRequiredMixin, View):
             'book': book,
             'review_form': review_form
         })
+
+
+class EditReviewView(LoginRequiredMixin, View):
+    def get(self, request, bookid, reviewId):
+        book = Book.objects.get(id=bookid)
+        review = book.bookreview_set.get(id=reviewId)
+        review_form = BookReviewForm(instance=review)
+        return render(request, "books/edit_review.html", {
+            'book': book,
+            'review': review,
+            'review_form': review_form
+        })
+    def post(self, request, bookid, reviewId):
+        book = Book.objects.get(id=bookid)
+        review = book.bookreview_set.get(id=reviewId)
+        review_form = BookReviewForm(data=request.POST, instance=review)
+        if review_form.is_valid():
+            review_form.save()
+            return redirect(reverse("books:detail", kwargs={"id": book.id}))
+
+class ConfirmDeleteReviewView(LoginRequiredMixin, View):
+    def get(self, request, bookid, reviewId):
+        book = Book.objects.get(id=bookid)
+        review = book.bookreview_set.get(id=reviewId)
+        return render(request, 'books/confirm_delete_review.html', {'book': book, 'review': review})
+
+class DeleteReviewView(LoginRequiredMixin, View):
+    def get(self, request, bookid, reviewId):
+        book = Book.objects.get(id=bookid)
+        review = book.bookreview_set.get(id=reviewId)
+
+        review.delete()
+        messages.success(request, "Review deleted successfully")
+        return redirect(reverse("books:detail", kwargs={"id": book.id}))

@@ -20,7 +20,7 @@
                 <hr class="my-4">
             </div>
 
-            <!-- Book Primary Layout Content Content -->
+            <!-- Book Primary Layout Content -->
             <div class="row g-4 mb-4">
                 <!-- Left Side: Cover Picture -->
                 <div class="col-md-4">
@@ -38,7 +38,7 @@
                 <div class="col-md-8">
                     <div class="bg-light p-4 rounded shadow-sm h-100 border d-flex flex-column gap-3">
 
-                        <!-- 1. Author Info Section (Styled with Minimal Italics) -->
+                        <!-- Author Info Section -->
                         <div>
                             <span class="text-muted small d-block mb-1">Authored by</span>
                             <div class="d-flex flex-wrap align-items-center gap-2">
@@ -55,7 +55,7 @@
 
                         <hr class="my-2 opacity-50">
 
-                        <!-- 2. Synopsis / Description Area -->
+                        <!-- Synopsis / Description Area -->
                         <div>
                             <h5 class="text-secondary mb-2 fw-bold text-uppercase tracking-wide small">Synopsis / Description</h5>
                             <p class="lead text-dark fs-6 mb-0" style="white-space: pre-line; line-height: 1.7;">
@@ -162,14 +162,28 @@
                                         </div>
                                     </div>
 
-                                    <div class="text-warning pt-1">
-                                        {% for i in "12345" %}
-                                            {% if forloop.counter <= review.stars_given %}
-                                                <i class="bi bi-star-fill"></i>
-                                            {% else %}
-                                                <i class="bi bi-star"></i>
-                                            {% endif %}
-                                        {% endfor %}
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="text-warning">
+                                            {% for i in "12345" %}
+                                                {% if forloop.counter <= review.stars_given %}
+                                                    <i class="bi bi-star-fill"></i>
+                                                {% else %}
+                                                    <i class="bi bi-star"></i>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+
+                                        <!-- Edit and Delete Actions triggers for Owner -->
+                                        {% if user.is_authenticated and review.user == user %}
+                                            <div class="btn-group shadow-xs rounded">
+                                                <a href="{% url 'books:edit-review' book.id review.id %}" class="btn btn-sm btn-white border text-secondary" title="Edit Review">
+                                                    <i class="bi bi-pencil small"></i>
+                                                </a>
+                                                <a href="{% url 'books:delete-confirm-review' book.id review.id %}" class="btn btn-sm btn-white border text-danger" title="Delete Review">
+                                                    <i class="bi bi-trash small"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <p class="text-secondary mb-0 small-text ps-md-2 mt-2" style="white-space: pre-line;">
@@ -197,6 +211,8 @@
     .shadow-xs { box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
     .max-w-sm { max-width: 380px; }
     .border-dashed { border-style: dashed !important; }
+    .btn-white { background: #fff; }
+    .btn-white:hover { background: #f8f9fa; }
 
     .avatar-img {
         width: 44px;
