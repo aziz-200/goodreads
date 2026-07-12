@@ -10,6 +10,8 @@ pillow = "*"
 celery = "*"
 celery-types = "*"
 kombu = "*"
+djangorestframework = "*"
+djangorestframework-stubs = "*"
 
 [dev-packages]
 

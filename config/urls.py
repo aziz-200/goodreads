@@ -29,6 +29,8 @@ urlpatterns = [
     path('', landing, name='landing'),
     path('users/', include("users.urls"), name='users'),
     path('books/', include("books.urls")),
+    path('api/', include("api.urls")),
+    path('api-auth/', include('rest_framework.urls')),
 ]
 #  For image urls
 if settings.DEBUG:
